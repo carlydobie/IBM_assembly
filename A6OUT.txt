@@ -1,0 +1,512 @@
+1                   J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2        
+0 
+ 19.21.58 JOB02584 ---- TUESDAY,   19 NOV 2019 ----
+ 19.21.58 JOB02584  IRR010I  USERID KC03D86  IS ASSIGNED TO THIS JOB.
+ 19.21.58 JOB02584  ICH70001I KC03D86  LAST ACCESS AT 19:20:45 ON TUESDAY, NOVEMBER 19, 2019
+ 19.21.58 JOB02584  $HASP373 KC03D86C STARTED - INIT 3    - CLASS A        - SYS 2964
+ 19.21.58 JOB02584  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS-
+ 19.21.58 JOB02584  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SW
+ 19.21.58 JOB02584  -STEP1                00     69      6       .00       .00     .0            10  BATCH        0     0     0   
+ 19.21.58 JOB02584  -KC03D86C ENDED.  NAME-Carly Dobie          TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+ 19.21.58 JOB02584  $HASP395 KC03D86C ENDED - RC=0000
+0------ JES2 JOB STATISTICS ------
+-  19 NOV 2019 JOB EXECUTION DATE
+-          198 CARDS READ
+-          516 SYSOUT PRINT RECORDS
+-            0 SYSOUT PUNCH RECORDS
+-           43 SYSOUT SPOOL KBYTES
+-         0.00 MINUTES EXECUTION TIME
+         1 //KC03D86C JOB ,'Carly Dobie',MSGCLASS=H                                JOB02584
+         2 //STEP1 EXEC PGM=ASSIST                                                         
+         3 //STEPLIB DD DSN=KC02293.ASSIST.LOADLIB,DISP=SHR                                
+         4 //SYSPRINT DD SYSOUT=*                                                          
+         5 //SYSIN DD *                                                                    
+         6 //FT05F001  DD  DSN=KC02314.AUTUMN19.CSCI360.HW6DATA,DISP=SHR                   
+ ICH70001I KC03D86  LAST ACCESS AT 19:20:45 ON TUESDAY, NOVEMBER 19, 2019
+ IEFA111I KC03D86C IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03D86C STEP1
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IGD103I SMS ALLOCATED TO DDNAME FT05F001
+ IEF142I KC03D86C STEP1 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC02293.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+ IEF285I   KC03D86.KC03D86C.JOB02584.D0000102.?         SYSOUT        
+ IEF285I   KC03D86.KC03D86C.JOB02584.D0000101.?         SYSIN         
+ IGD104I KC02314.AUTUMN19.CSCI360.HW6DATA             RETAINED,  DDNAME=FT05F001
+ IEF373I STEP/STEP1   /START 2019323.1921
+ IEF032I STEP/STEP1   /STOP  2019323.1921 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+         VIRT:   584K  SYS:   252K  EXT:        0K  SYS:    11380K
+         ATB- REAL:                  1044K  SLOTS:                     0K
+              VIRT- ALLOC:      11M SHRD:       0M
+ IEF375I  JOB/KC03D86C/START 2019323.1921
+ IEF033I  JOB/KC03D86C/STOP  2019323.1921 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT         
+0                                                                                                                                 
+0                                                                                                               PAGE    1         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+                                       1 ********************************************                                             
+                                       2 * Assignment 6                                                                           
+                                       3 *                                                                                        
+                                       4 * NAME: Carly Dobie                                                                      
+                                       5 ********************************************                                             
+ 000000                                6 ENTRY    DSECT                                                                           
+ 000000                                7 LNAME    DS    CL10                                                                      
+ 00000A                                8 FNAME    DS    CL10                                                                      
+ 000014                                9 ID       DS    CL8                                                                       
+ 00001C                               10 BALANCE  DS    PL4                                                                       
+                                      11 ********************************************                                             
+ 000000                               12 TRANSACT DSECT                                                                           
+ 000000                               13 CLIENTID DS    CL8                                                                       
+ 000008                               14 TYPE     DS    CL1                                                                       
+ 000009                               15 AMOUNT   DS    CL7                                                                       
+ 000010                               16 DAY      DS    CL2                                                                       
+ 000012                               17 MONTH    DS    CL2                                                                       
+ 000014                               18 YEAR     DS    CL2                                                                       
+                                      19 ********************************************                                             
+                                      20 *                                                                                        
+                                      21 * Register Usage in executable code:                                                     
+                                      22 *   1        Parameter List                                                              
+                                      23 *  15        Base Register                                                               
+                                      24 *                                                                                        
+                                      25 ********************************************                                             
+                                      26 * Executable code:                                                                       
+ 000000                               27 MAIN     CSECT                                                                           
+ 000000 90EC D00C            0000C    28          STM   14,12,12(13)                                                              
+ 000004 18CF                          29          LR    12,15                                                                     
+ 000000                               30          USING MAIN,12                                                                   
+ 000006 41E0 C044            00044    31          LA    14,MSAVE                                                                  
+ 00000A 50D0 E004            00004    32          ST    13,4(,14)                                                                 
+ 00000E 50E0 D008            00008    33          ST    14,8(,13)                                                                 
+ 000012 18DE                          34          LR    13,14                                                                     
+ 000014 4110 C5F4            005F4    35          LA    1,PARAMS                                                                  
+ 000018 58F0 C038            00038    36          L     15,=V(BUILD)                                                              
+ 00001C 05EF                          37          BALR  14,15                                                                     
+ 00001E 58F0 C03C            0003C    38          L     15,=V(PRINT)                                                              
+ 000022 05EF                          39          BALR  14,15                                                                     
+ 000024 58F0 C040            00040    40          L     15,=V(TRANS)                                                              
+ 000028 05EF                          41          BALR  14,15                                                                     
+ 00002A 58D0 D004            00004    42          L     13,4(,13)                                                                 
+ 00002E 98EF D00C            0000C    43          LM    14,15,12(13)                                                              
+ 000032 981C D018            00018    44          LM    1,12,24(13)                                                               
+ 000036 07FE                          45          BR    14                                                                        
+                                      46          LTORG                                                                           
+ 000038 00000600                      47                =V(BUILD)                                                                 
+ 00003C 000006D8                      48                =V(PRINT)                                                                 
+ 000040 00000838                      49                =V(TRANS)                                                                 
+ 000044                               50 MSAVE    DS    18F                                                                       
+ 0000A0                               51          ORG   MAIN+((*-MAIN+31)/32)*32                                                  
+ 0000A0                               52 TABLE    DS    40CL32                                                                    
+1                                                                                                               PAGE    2         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+ 0005A0                               53 ENDTABLE DS    0H               Marks the end of TABLE                                   
+ 0005A0 000000A0                      54 EOT      DC    A(TABLE)         Address of 1st unused entry in TABLE                     
+ 0005A4                               55 BUFFER   DS    80C              Input storage area                                       
+ 0005F4 000000A0                      56 PARAMS   DC    A(TABLE)         Parameter list                                           
+ 0005F8 000005A0                      57          DC    A(EOT)                                                                    
+ 0005FC 000005A4                      58          DC    A(BUFFER)                                                                 
+                                      59 ********************************************                                             
+                                      60 *                                                                                        
+                                      61 * Register Usage in BUILD:                                                               
+                                      62 *   1        Parameter list                                                              
+                                      63 *   2        Address of TABLE                                                            
+                                      64 *   3        Address of EOT                                                              
+                                      65 *   4        Address of BUFFER                                                           
+                                      66 *  12        Base Register                                                               
+                                      67 *                                                                                        
+                                      68 ********************************************                                             
+                                      69 * Start BUILD subroutine:                                                                
+                                      70 * BUILD reads records from an input file and places them into a                          
+                                      71 * table                                                                                  
+ 000600                               72 BUILD    CSECT                                                                           
+ 000600 90EC D00C            0000C    73          STM   14,12,12(13)     Save the registers                                       
+ 000604 18CF                          74          LR    12,15            Establish 12 as the                                      
+ 000600                               75          USING BUILD,12         base register                                            
+ 000000                               76          USING ENTRY,2          Format for table                                         
+ 000606 41E0 C08C            0068C    77          LA    14,BSAVE         Point R14 at BSAVE                                       
+ 00060A 50D0 E004            00004    78          ST    13,4(,14)        Save the forward pointer                                 
+ 00060E 50E0 D008            00008    79          ST    14,8(,13)        Save the backward pointer                                
+ 000612 18DE                          80          LR    13,14            Point R13 at BSAVE                                       
+ 000614 9824 1000            00000    81          LM    2,4,0(1)         Load parameter list into 2-4                             
+ 000618 E000 4000 0050 00000          82 READ     XREAD 0(0,4),80        Read line of input                                       
+ 00061E 4740 C068            00668    83          BC    B'0100',ENDREAD  End loop if at EOF                                       
+ 000622 D209 2000 4000 00000 00000    84          MVC   LNAME(10),0(4)   Store client's last name                                 
+ 000628 D507 2000 C078 00000 00678    85          CLC   LNAME(8),=CL8'DONOTPUT' See if input is the delimiter                     
+ 00062E 4780 C068            00668    86          BE    ENDREAD          End loop if delimeter is reached                         
+ 000632 D209 200A 400C 0000A 0000C    87          MVC   FNAME(10),12(4)  Store client's first name                                
+ 000638 D207 2014 4018 00014 00018    88          MVC   ID(8),24(4)      Store client's ID                                        
+ 00063E D206 C082 4022 00682 00022    89          MVC   TEMP(7),34(4)                                                             
+ 000644 F236 201C 4022 0001C 00022    90          PACK  BALANCE(4),34(7,4) Store balance                                          
+ 00064A D200 C089 4029 00689 00029    91          MVC   SIGN(1),41(4)    Store the sign                                           
+ 000650 D500 C089 C080 00689 00680    92          CLC   SIGN,=CL1'+'     Check sign of balance                                    
+ 000656 4780 C060            00660    93          BE    POS              If positive, skip next step                              
+ 00065A FC30 201C C081 0001C 00681    94          MP    BALANCE(4),=PL1'-1' If negative, multiply by -1                           
+ 000660 4120 2020            00020    95 POS      LA    2,32(0,2)        Advance to next slot in TABLE                            
+ 000664 47F0 C018            00618    96          B     READ             Repeat loop                                              
+ 000668 5020 3000            00000    97 ENDREAD  ST    2,0(0,3)         Store address of 1st unused entry                        
+ 00066C 58D0 D004            00004    98          L     13,4(0,13)       Point R13 at caller's save area.                         
+ 000670 98EC D00C            0000C    99          LM    14,12,12(13)     Restore the registers.                                   
+ 000674 07FE                         100          BR    14               Return to the caller.                                    
+                                     101          LTORG                                                                           
+ 000678 C4D6D5D6E3D7E4E3             102                =CL8'DONOTPUT'                                                            
+ 000680 4E                           103                =CL1'+'                                                                   
+ 000681 1D                           104                =PL1'-1'                                                                  
+ 000682                              105 TEMP     DS    CL7                                                                       
+ 000689                              106 SIGN     DS    CL1                                                                       
+ 00068C                              107 BSAVE    DS    18F              Save area for BUILD                                      
+                                     108 ********************************************                                             
+                                     109 *                                                                                        
+1                                                                                                               PAGE    3         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+                                     110 * Register Usage in PRINT:                                                               
+                                     111 *                                                                                        
+                                     112 *   1        Parameter list                                                              
+                                     113 *   2        Address of TABLE                                                            
+                                     114 *   3        Address of EOT                                                              
+                                     115 *   8        Counter for table entries                                                   
+                                     116 *  10        Page number                                                                 
+                                     117 *  12        Base Register                                                               
+                                     118 *                                                                                        
+                                     119 ********************************************                                             
+                                     120 * Start PRINT subroutine:                                                                
+                                     121 * PRINT prints out all the numbers that were saved in TABLE.                             
+ 0006D8                              122 PRINT    CSECT                                                                           
+ 0006D8 90EC D00C            0000C   123          STM   14,12,12(13)     Save the registers                                       
+ 0006DC 18CF                         124          LR    12,15            Establish 12 as the                                      
+ 0006D8                              125          USING PRINT,12         base register                                            
+ 0006DE 41E0 C118            007F0   126          LA    14,PSAVE         Point R14 at PSAVE                                       
+ 0006E2 50D0 E004            00004   127          ST    13,4(0,14)       Save the forward pointer                                 
+ 0006E6 50E0 D008            00008   128          ST    14,8(0,13)       Save the backward pointer                                
+ 0006EA 18DE                         129          LR    13,14            Point R13 at PSAVE                                       
+ 0006EC 9823 1000            00000   130          LM    2,3,0(1)         Unload the parameters                                    
+ 000000                              131          USING ENTRY,2          Format for table                                         
+ 0006F0 1BAA                         132          SR    10,10            Clear the page counter                                   
+ 0006F2 F820 C0ED C0B2 007C5 0078A   133          ZAP   PNUM(3),=PL1'0' Initialize page number                                    
+ 0006F8 1923                         134 PHEAD    CR    2,3              See if at end of table                                   
+ 0006FA 4780 C092            0076A   135          BE    ENDPRINT         Stop printing at end of table                            
+ 0006FE 1B88                         136          SR    8,8              Clear the entry counter                                  
+ 000700 FA20 C0ED C0B3 007C5 0078B   137          AP    PNUM(3),=PL1'1'  Increment page number                                    
+ 000706 E160 0000 0000 00000         138          XDUMP                                                                           
+ 00070C D202 C0EA C0B4 007C2 0078C   139          MVC   PAGE(3),=X'402120' Format page number for printing                        
+ 000712 DE02 C0EA C0ED 007C2 007C5   140          ED    PAGE(3),PNUM     Apply formatting to page number                          
+ 000718 E020 C0B7 0036 0078F         141          XPRNT HEAD,54          Print page header                                        
+ 00071E 9240 C0F0      007C8         142 PLINE    MVI   LINE+1,C' '      Clear output line                                        
+ 000722 D253 C0F1 C0F0 007C9 007C8   143          MVC   LINE+2(84),LINE+1                                                         
+ 000728 D209 C0FA 2000 007D2 00000   144          MVC   PLNAME(10),LNAME  Store FNAME for printing                                
+ 00072E D209 C0F0 200A 007C8 0000A   145          MVC   PFNAME(10),FNAME  Store LNAME for printing                                
+ 000734 D207 C104 2014 007DC 00014   146          MVC   PID(8),ID         Store ID for printing                                   
+ 00073A D209 C10C C0A8 007E4 00780   147          MVC   PBAL(10),=X'4020206B2021204B2020' Format BAL                              
+ 000740 4110 C112            007EA   148          LA    1,PBAL+6          Initialize reg 1 to use EDMK                            
+ 000744 DF09 C10C 201C 007E4 0001C   149          EDMK  PBAL(10),BALANCE  Store BAL for printing                                  
+ 00074A E160 0000 0000 00000         150          XDUMP                                                                           
+ 000750 E020 C0EF 0027 007C7         151          XPRNT LINE,39           Print LINE                                              
+ 000756 5A80 C0A0            00778   152          A     8,=F'1'           Increment entry counter                                 
+ 00075A 5980 C0A4            0077C   153          C     8,=F'15'          Check if 15 entries on page                             
+ 00075E 4780 C020            006F8   154          BE    PHEAD             Start next page if 15 entries                           
+ 000762 4120 2020            00020   155          LA    2,32(0,2)         Advance table pointer                                   
+ 000766 47F0 C046            0071E   156          B     PLINE             Repeat line loop                                        
+                                     157 * All values in table have been printed.                                                 
+ 00076A 58D0 D004            00004   158 ENDPRINT L     13,4(0,13)        Point R13 at caller's save area.                        
+ 00076E 98EC D00C            0000C   159          LM    14,12,12(13)      Restore the registers.                                  
+ 000772 07FE                         160          BR    14                Return to the caller.                                   
+                                     161          LTORG                                                                           
+ 000778 00000001                     162                =F'1'                                                                     
+ 00077C 0000000F                     163                =F'15'                                                                    
+ 000780 4020206B2021204B             164                =X'4020206B2021204B2020'                                                  
+ 00078A 0C                           165                =PL1'0'                                                                   
+ 00078B 1C                           166                =PL1'1'                                                                   
+1                                                                                                               PAGE    4         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+ 00078C 402120                       167                =X'402120'                                                                
+ 00078F F1                           168 HEAD     DC    CL1'1'                                                                    
+ 000790 4040404040404040             169          DC    CL50'        Odds and Ends Customer Data         Page: '                  
+ 0007C2                              170 PAGE     DS    CL3                                                                       
+ 0007C5                              171 PNUM     DS    PL2                                                                       
+ 0007C7 F0                           172 LINE     DC    CL1'0'           Output line, carriage control                            
+ 0007C8                              173 PFNAME   DS    CL10             First name output                                        
+ 0007D2                              174 PLNAME   DS    CL10             Last name output                                         
+ 0007DC                              175 PID      DS    CL8              ID number output                                         
+ 0007E4                              176 PBAL     DS    CL10             Balance output                                           
+ 0007F0                              177 PSAVE    DS    18F              Save area for PRINT                                      
+                                     178 ********************************************                                             
+                                     179 *                                                                                        
+                                     180 * Register Usage in TRANS:                                                               
+                                     181 *                                                                                        
+                                     182 *                                                                                        
+                                     183 ********************************************                                             
+ 000838                              184 TRANS    CSECT                                                                           
+ 000838 90EC D00C            0000C   185          STM   14,12,12(13)     Save the registers                                       
+ 00083C 18CF                         186          LR    12,15            Establish 12 as the                                      
+ 000838                              187          USING TRANS,12         base register                                            
+ 00083E 41E0 C02C            00864   188          LA    14,TSAVE         Point R14 at TSAVE                                       
+ 000842 50D0 E004            00004   189          ST    13,4(0,14)       Save the forward pointer                                 
+ 000846 50E0 D008            00008   190          ST    14,8(0,13)       Save the backward pointer                                
+ 00084A 18DE                         191          LR    13,14            Point R13 at TSAVE                                       
+ 00084C 9824 1000            00000   192          LM    2,4,0(1)         Unload the parameters                                    
+ 000000                              193          USING TRANSACT,4                                                                
+ 000850 E000 4000 0050 00000         194 TLOOP    XREAD 0(0,4),80        Read line of file                                        
+ 000856 4740 C022            0085A   195          BC    B'0100',ENDTLOOP End loop if at EOF                                       
+ 00085A 98EC D00C            0000C   196 ENDTLOOP LM    14,12,12(13)     Restore the registers.                                   
+ 00085E 07FE                         197          BR    14               Return to the caller.                                    
+                                     198          LTORG                                                                           
+ 000860                              199 CHANGE   DS    PL4                                                                       
+ 000864                              200 TSAVE    DS    18F                                                                       
+                                     201 ******************************************************                                   
+ 0008AC E160 0000 0000 00000         202          XDUMP                                                                           
+                                     203          END   MAIN             End of source code file                                  
+0***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                      
+0*** DYNAMIC CORE AREA USED:  LOW:    9640 HIGH:    1516 LEAVING:  482412 FREE BYTES. AVERAGE:       54 BYTES/STMT ***            
+0*** ASSEMBLY TIME =    0.000 SECS,   204000 STATEMENTS/SEC ***                                                                   
+0*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                       
+0BEGIN XSNAP - CALL     1 AT E000070C USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000005F4    000000A0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000000    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+1        Odds and Ends Customer Data         Page:   0                                                                            
+0BEGIN XSNAP - CALL     2 AT C0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    000000A0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000000    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Sharon    Adams     A162350S      0.00                                                                                           
+0BEGIN XSNAP - CALL     3 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    000000C0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000001    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Ronald    Allen     A760565R      1.74                                                                                           
+0BEGIN XSNAP - CALL     4 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    000000E0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000002    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Brian     Baker     B287543B    230.40                                                                                           
+0BEGIN XSNAP - CALL     5 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    00000100    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000003    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ George    Campbell  C337711G     95.96                                                                                           
+0BEGIN XSNAP - CALL     6 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    00000120    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000004    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Susan     Carter    C909765S    161.33                                                                                           
+0BEGIN XSNAP - CALL     7 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    00000140    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000005    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Sarah     Edwards   E916021S      0.25                                                                                           
+0BEGIN XSNAP - CALL     8 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E6    00000160    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000006    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Charles   Evans     E098654C  2,120.93                                                                                           
+0BEGIN XSNAP - CALL     9 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E6    00000180    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000007    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+1                                                                                                                                 
+ Kimberly  Garcia    G678012K  3,151.53                                                                                           
+0BEGIN XSNAP - CALL    10 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    000001A0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000008    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Maria     Hall      H837651M    450.00                                                                                           
+0BEGIN XSNAP - CALL    11 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    000001C0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000009    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Jennifer  Harris    H876439J    980.71                                                                                           
+0BEGIN XSNAP - CALL    12 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    000001E0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000A    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Sarah     Hill      H234678S     75.00                                                                                           
+0BEGIN XSNAP - CALL    13 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    00000200    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000B    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Kimberly  Jones     J901345K      9.99                                                                                           
+0BEGIN XSNAP - CALL    14 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E6    00000220    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000C    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Kevin     Lee       L870811K  1,561.64                                                                                           
+0BEGIN XSNAP - CALL    15 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    00000240    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000D    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Daniel    Lewis     L132333D    214.56                                                                                           
+0BEGIN XSNAP - CALL    16 AT C0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    00000260    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000E    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Thomas    Miller    M825868T      0.00                                                                                           
+0BEGIN XSNAP - CALL    17 AT E000070C USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    00000260    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000000    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+1                                                                                                                                 
+1        Odds and Ends Customer Data         Page:   0                                                                            
+0BEGIN XSNAP - CALL    18 AT C0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    00000260    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000000    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Thomas    Miller    M825868T      0.00                                                                                           
+0BEGIN XSNAP - CALL    19 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    00000280    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000001    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Brian     Mitchell  M554644B    372.48                                                                                           
+0BEGIN XSNAP - CALL    20 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    000002A0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000002    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Sharon    Moore     M266757S     18.47                                                                                           
+0BEGIN XSNAP - CALL    21 AT C0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    000002C0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000003    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Sandra    Perez     P752778S      0.00                                                                                           
+0BEGIN XSNAP - CALL    22 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    000002E0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000004    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Kenneth   Phillips  P231035K      0.01                                                                                           
+0BEGIN XSNAP - CALL    23 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    00000300    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000005    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Steven    Robinson  R028106S     34.40                                                                                           
+0BEGIN XSNAP - CALL    24 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    00000320    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000006    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Paul      Scott     S926648P     76.73                                                                                           
+0BEGIN XSNAP - CALL    25 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    00000340    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000007    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+1                                                                                                                                 
+ George    Taylor    T589729G    120.81                                                                                           
+0BEGIN XSNAP - CALL    26 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    00000360    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000008    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Mark      Thomas    T437350M     53.27                                                                                           
+0BEGIN XSNAP - CALL    27 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    00000380    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     00000009    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Steven    Walker    W962623S    123.13                                                                                           
+0BEGIN XSNAP - CALL    28 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E8    000003A0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000A    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Ruth      Williams  W408954R    235.71                                                                                           
+0BEGIN XSNAP - CALL    29 AT D0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007E9    000003C0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000B    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Jeff      Wilson    W875840J     11.23                                                                                           
+0BEGIN XSNAP - CALL    30 AT E0000750 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    000007EA    000003E0    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000C    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0                                                                                                                                 
+ Humphrey  Yanders   Y773405H      0.01                                                                                           
+0*** EXECUTION TIME =    0.000 SECS.       866 INSTRUCTIONS EXECUTED -   866000 INSTRUCTIONS/SEC ***                              
+0*** FIRST CARD NOT READ: M555555Q  W  9999999  29022019                                                                          
+1 ASSIST COMPLETION DUMP                                                                                                          
+0PSW AT ABEND FFC50007 D000074A       COMPLETION CODE   SYSTEM = 0C7 DATA                                                         
+0** TRACE OF INSTRUCTIONS JUST BEFORE TERMINATION: PSW BITS SHOWN ARE THOSE BEFORE CORRESPONDING INSTRUCTION DECODED ***          
+0  IM LOCATION    INSTRUCTION :  IM = PSW BITS 32-39(ILC,CC,MASK) BEFORE INSTRUCTION EXECUTED AT PROGRAM LOCATION SHOWN           
+0  10  000762     4120 2020                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  00071E     9240 C0F0                                                                                                       
+0  90  000722     D253 C0F1 C0F0                                                                                                  
+0  D0  000728     D209 C0FA 2000                                                                                                  
+0  D0  00072E     D209 C0F0 200A                                                                                                  
+0  D0  000734     D207 C104 2014                                                                                                  
+0  D0  00073A     D209 C10C C0A8                                                                                                  
+0  D0  000740     4110 C112                                                                                                       
+0  90  000744     DF09 C10C 201C  <-- LAST INSTRUCTION DONE - PROBABLE CAUSE OF TERMINATION                                       
+0                                                                                                                                 
+-** TRACE OF LAST 10 BRANCH INSTRUCTIONS EXECUTED: PSW BITS SHOWN ARE THOSE BEFORE CORRESPONDING INSTRUCTION DECODED ***          
+0  IM LOCATION    INSTRUCTION :  IM = PSW BITS 32-39(ILC,CC,MASK) BEFORE INSTRUCTION EXECUTED AT PROGRAM LOCATION SHOWN           
+0  10  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0  90  000766     47F0 C046                                                                                                       
+0 REGS 0-7      F4F4F4F4    000007EA    00000400    000005A0    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     0000000D    F4F4F4F4    00000000    F4F4F4F4    000006D8    000007F0    000007F0    000006D8                      
+0 FLTR 0-6      F4F4F4F4F4F4F4F4        F4F4F4F4F4F4F4F4        F4F4F4F4F4F4F4F4        F4F4F4F4F4F4F4F4                          
+1 USER STORAGE                                                                                                                    
+0                             CORE ADDRESSES SPECIFIED-     000000 TO 000A00                                                      
+ 000000   90ECD00C 18CF41E0 C04450D0 E00450E0    D00818DE 4110C5F4 58F0C038 05EF58F0   *......................E4.0.....0*         
+ 000020   C03C05EF 58F0C040 05EF58D0 D00498EF    D00C981C D01807FE 00000600 000006D8   *.....0. .......................Q*         
+ 000040   00000838 F5F5F5F5 000008B8 000007F0    40000024 000006D8 F4F4F4F4 000005F4   *....5555.......0 ......Q4444...4*         
+ 000060   F4F4F4F4 F4F4F4F4 F4F4F4F4 F4F4F4F4    F4F4F4F4 F4F4F4F4 F4F4F4F4 F4F4F4F4   *44444444444444444444444444444444*         
+ 000080   F4F4F4F4 F4F4F4F4 00000000 F5F5F5F5    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *44444444....55555555555555555555*         
+ 0000A0   C1848194 A2404040 4040E288 81999695    40404040 C1F1F6F2 F3F5F0E2 0000000D   *A....     S.....    A162350S....*         
+ 0000C0   C1939385 95404040 4040D996 95819384    40404040 C1F7F6F0 F5F6F5D9 0000174D   *A....     R.....    A760565R....*         
+ 0000E0   C2819285 99404040 4040C299 89819540    40404040 C2F2F8F7 F5F4F3C2 0023040F   *B....     B....     B287543B....*         
+ 000100   C3819497 82859393 4040C785 96998785    40404040 C3F3F3F7 F7F1F1C7 0009596F   *C.......  G.....    C337711G....*         
+ 000120   C38199A3 85994040 4040E2A4 A2819540    40404040 C3F9F0F9 F7F6F5E2 0016133D   *C.....    S....     C909765S....*         
+ 000140   C584A681 9984A240 4040E281 99818840    40404040 C5F9F1F6 F0F2F1E2 0000025D   *E......   S....     E916021S....*         
+ 000160   C5A58195 A2404040 4040C388 81999385    A2404040 C5F0F9F8 F6F5F4C3 0212093F   *E....     C......   E098654C....*         
+ 000180   C7819983 89814040 4040D289 94828599    93A84040 C7F6F7F8 F0F1F2D2 0315153F   *G.....    K.......  G678012K....*         
+ 0001A0   C8819393 40404040 4040D481 99898140    40404040 C8F8F3F7 F6F5F1D4 0045000F   *H...      M....     H837651M....*         
+ 0001C0   C8819999 89A24040 4040D185 95958986    85994040 C8F8F7F6 F4F3F9D1 0098071D   *H.....    J.......  H876439J....*         
+ 0001E0   C8899393 40404040 4040E281 99818840    40404040 C8F2F3F4 F6F7F8E2 0007500D   *H...      S....     H234678S....*         
+ 000200   D1969585 A2404040 4040D289 94828599    93A84040 D1F9F0F1 F3F4F5D2 0000999D   *J....     K.......  J901345K....*         
+ 000220   D3858540 40404040 4040D285 A5899540    40404040 D3F8F7F0 F8F1F1D2 0156164F   *L..       K....     L870811K....*         
+ 000240   D385A689 A2404040 4040C481 95898593    40404040 D3F1F3F2 F3F3F3C4 0021456F   *L....     D.....    L132333D....*         
+ 000260   D4899393 85994040 4040E388 969481A2    40404040 D4F8F2F5 F8F6F8E3 0000000F   *M.....    T.....    M825868T....*         
+ 000280   D489A383 88859393 4040C299 89819540    40404040 D4F5F5F4 F6F4F4C2 0037248F   *M.......  B....     M554644B....*         
+ 0002A0   D4969699 85404040 4040E288 81999695    40404040 D4F2F6F6 F7F5F7E2 0001847F   *M....     S.....    M266757S....*         
+ 0002C0   D7859985 A9404040 4040E281 95849981    40404040 D7F7F5F2 F7F7F8E2 0000000F   *P....     S.....    P752778S....*         
+ 0002E0   D7888993 938997A2 4040D285 959585A3    88404040 D7F2F3F1 F0F3F5D2 0000001D   *P.......  K......   P231035K....*         
+ 000300   D9968289 95A29695 4040E2A3 85A58595    40404040 D9F0F2F8 F1F0F6E2 0003440F   *R.......  S.....    R028106S....*         
+ 000320   E28396A3 A3404040 4040D781 A4934040    40404040 E2F9F2F6 F6F4F8D7 0007673F   *S....     P...      S926648P....*         
+ 000340   E381A893 96994040 4040C785 96998785    40404040 E3F5F8F9 F7F2F9C7 0012081D   *T.....    G.....    T589729G....*         
+ 000360   E3889694 81A24040 4040D481 99924040    40404040 E3F4F3F7 F3F5F0D4 0005327F   *T.....    M...      T437350M....*         
+ 000380   E6819392 85994040 4040E2A3 85A58595    40404040 E6F9F6F2 F6F2F3E2 0012313F   *W.....    S.....    W962623S....*         
+ 0003A0   E6899393 898194A2 4040D9A4 A3884040    40404040 E6F4F0F8 F9F5F4D9 0023571F   *W.......  R...      W408954R....*         
+ 0003C0   E68993A2 96954040 4040D185 86864040    40404040 E6F8F7F5 F8F4F0D1 0001123D   *W.....    J...      W875840J....*         
+ 0003E0   E8819584 8599A240 4040C8A4 94978899    85A84040 E8F7F7F3 F4F0F5C8 0000001F   *Y......   H.......  Y773405H....*         
+ 000400   C4D6D5D6 E3D7E4E3 4040F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *DONOTPUT  5555555555555555555555*         
+ 000420   F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *55555555555555555555555555555555*         
+   LINES    000440-000580    SAME AS ABOVE                                                                                        
+ 0005A0   00000400 C4D6D5D6 E3D7E4E3 40404040    D4C5C9D5 E3C1C2D3 C5404040 E2E3D6D7   *....DONOTPUT    MEINTABLE   STOP*         
+ 0005C0   C8C5D9C5 4040F0F0 F0F0F0F0 F04E4040    40404040 40404040 40404040 40404040   *HERE  0000000.                  *         
+ 0005E0   40404040 40404040 40404040 40404040    40404040 000000A0 000005A0 000005A4   *                    ............*         
+ 000600   90ECD00C 18CF41E0 C08C50D0 E00450E0    D00818DE 98241000 E0004000 00504740   *.......................... .... *         
+ 000620   C068D209 20004000 D5072000 C0784780    C068D209 200A400C D2072014 4018D206   *..K... .N.........K... .K... .K.*         
+ 000640   C0824022 F236201C 4022D200 C0894029    D500C089 C0804780 C060FC30 201CC081   *.. .2... .K... .N...............*         
+ 000660   41202020 47F0C018 50203000 58D0D004    98ECD00C 07FEF5F5 C4D6D5D6 E3D7E4E3   *.....0................55DONOTPUT*         
+ 000680   4E1DF0F0 F0F0F0F0 F14EF5F5 F5F5F5F5    00000044 F5F5F5F5 F5F5F5F5 F5F5F5F5   *..0000001.555555....555555555555*         
+ 0006A0   F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *55555555555555555555555555555555*         
+ 0006C0   F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 90ECD00C 18CF41E0   *555555555555555555555555........*         
+ 0006E0   C11850D0 E00450E0 D00818DE 98231000    1BAAF820 C0EDC0B2 19234780 C0921B88   *A.................8.............*         
+ 000700   FA20C0ED C0B3E160 00000000 D202C0EA    C0B4DE02 C0EAC0ED E020C0B7 00369240   *............K.................. *         
+ 000720   C0F0D253 C0F1C0F0 D209C0FA 2000D209    C0F0200A D207C104 2014D209 C10CC0A8   *.0K..1.0K.....K..0..K.A...K.A...*         
+ 000740   4110C112 DF09C10C 201CE160 00000000    E020C0EF 00275A80 C0A05980 C0A44780   *..A...A.........................*         
+ 000760   C0204120 202047F0 C04658D0 D00498EC    D00C07FE F5F5F5F5 00000001 0000000F   *.......0............5555........*         
+ 000780   4020206B 2021204B 20200C1C 402120F1    40404040 40404040 D68484A2 40819584   * ........... ..1        O... ...*         
+ 0007A0   40C59584 A240C3A4 A2A39694 859940C4    81A38140 40404040 40404040 D7818785   * E... C....... D...         P...*         
+ 0007C0   7A404040 F000002C F5F5F5F5 F5F5F5F5    F5F5C4D6 D5D6E3D7 E4E34040 F5F5F5F5   *.   0...5555555555DONOTPUT  5555*         
+ 0007E0   F5F5F5F5 4020206B 2021204B 20204040    40404040 40404040 40404040 40404040   *5555 .........                  *         
+ 000800   40404040 40404040 40404040 40404040    40404040 40404040 40404040 40F5F5F5   *                             555*         
+ 000820   F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 90ECD00C 18CF41E0   *555555555555555555555555........*         
+ 000840   C02C50D0 E00450E0 D00818DE 98241000    E0004000 00504740 C02298EC D00C07FE   *.................. .... ........*         
+ 000860   F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *55555555555555555555555555555555*         
+   LINES    000880-000880    SAME AS ABOVE                                                                                        
+ 0008A0   F5F5F5F5 F5F5F5F5 F5F5F5F5 E1600000    0000F5F5 F5F5F5F5 F5F5F5F5 00000000   *555555555555......5555555555....*         
+10008C0   00000044 FFFE7960 00000000 F4F4F4F4    F4F4F4F4 F4F4F4F4 F4F4F4F4 F4F4F4F4   *............44444444444444444444*         
+ 0008E0   F4F4F4F4 F4F4F4F4 F4F4F4F4 F4F4F4F4    F4F4F4F4 F4F4F4F4 F4F4F4F4 F4F4F4F4   *44444444444444444444444444444444*         
+ 000900   F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *55555555555555555555555555555555*         
+   LINES    000920-0009C0    SAME AS ABOVE                                                                                        
+0                                                                                                                                 

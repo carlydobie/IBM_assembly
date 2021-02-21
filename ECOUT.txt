@@ -1,0 +1,163 @@
+1                   J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2        
+0 
+ 03.15.22 JOB09577 ---- FRIDAY,    06 DEC 2019 ----
+ 03.15.22 JOB09577  IRR010I  USERID KC03D86  IS ASSIGNED TO THIS JOB.
+ 03.15.22 JOB09577  ICH70001I KC03D86  LAST ACCESS AT 03:15:10 ON FRIDAY, DECEMBER 6, 2019
+ 03.15.22 JOB09577  $HASP373 KC03D86C STARTED - INIT 2    - CLASS A        - SYS 2964
+ 03.15.22 JOB09577  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS-
+ 03.15.22 JOB09577  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SW
+ 03.15.22 JOB09577  -STEP1                00     52      4       .00       .00     .0             7  BATCH        0     0     0   
+ 03.15.22 JOB09577  -KC03D86C ENDED.  NAME-Carly Dobie          TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+ 03.15.22 JOB09577  $HASP395 KC03D86C ENDED - RC=0000
+0------ JES2 JOB STATISTICS ------
+-  06 DEC 2019 JOB EXECUTION DATE
+-           80 CARDS READ
+-          167 SYSOUT PRINT RECORDS
+-            0 SYSOUT PUNCH RECORDS
+-           14 SYSOUT SPOOL KBYTES
+-         0.00 MINUTES EXECUTION TIME
+         1 //KC03D86C JOB ,'Carly Dobie',MSGCLASS=H                                JOB09577
+         2 //STEP1 EXEC PGM=ASSIST                                                         
+         3 //STEPLIB DD DSN=KC02293.ASSIST.LOADLIB,DISP=SHR                                
+         4 //SYSPRINT DD SYSOUT=*                                                          
+         5 //SYSIN DD *                                                                    
+         6 //FT05F001  DD  DSN=KC02314.AUTUMN19.CSCI360.HWEXDATA,DISP=SHR                  
+ ICH70001I KC03D86  LAST ACCESS AT 03:15:10 ON FRIDAY, DECEMBER 6, 2019
+ IEFA111I KC03D86C IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03D86C STEP1
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IGD103I SMS ALLOCATED TO DDNAME FT05F001
+ IEF142I KC03D86C STEP1 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC02293.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+ IEF285I   KC03D86.KC03D86C.JOB09577.D0000102.?         SYSOUT        
+ IEF285I   KC03D86.KC03D86C.JOB09577.D0000101.?         SYSIN         
+ IGD104I KC02314.AUTUMN19.CSCI360.HWEXDATA            RETAINED,  DDNAME=FT05F001
+ IEF373I STEP/STEP1   /START 2019340.0315
+ IEF032I STEP/STEP1   /STOP  2019340.0315 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+         VIRT:   584K  SYS:   252K  EXT:        0K  SYS:    12304K
+         ATB- REAL:                  4116K  SLOTS:                     0K
+              VIRT- ALLOC:      11M SHRD:       0M
+ IEF375I  JOB/KC03D86C/START 2019340.0315
+ IEF033I  JOB/KC03D86C/STOP  2019340.0315 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT         
+0                                                                                                                                 
+0                                                                                                               PAGE    1         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+                                       1 ********************************************                                             
+                                       2 * Assignment Extra Credit                                                                
+                                       3 *                                                                                        
+                                       4 * NAME: Carly Dobie                                                                      
+                                       5 *                                                                                        
+                                       6 * Register Usage:                                                                        
+                                       7 *                                                                                        
+                                       8 ********************************************                                             
+ 000000                                9 MAIN     CSECT                                                                           
+ 000000                               10          USING MAIN,15                                                                   
+ 000000 E000 F10C 0050 0010C          11 READ     XREAD BUFFER,80      Read data from file                                        
+ 000006 4740 F0F2            000F2    12          BC    B'0100',DONE   End loop if at EOF                                         
+ 00000A D205 F15C F10C 0015C 0010C    13          MVC   TEMP(6),BUFFER Move first num into temp                                   
+ 000010 D505 F15C F102 0015C 00102    14          CLC   TEMP(6),=C'0'  See if first num is 0                                      
+ 000016 4770 F02A            0002A    15          BNE   NZERO1         Continue if not 0                                          
+ 00001A D207 F186 F103 00186 00103    16          MVC   RESULT(8),=P'0' Result is 0                                               
+ 000020 F233 F182 F114 00182 00114    17          PACK  NUM2(4),BUFFER+8(4) Store second number                                   
+ 000026 47F0 F0C4            000C4    18          B     PRINT          Print                                                      
+ 00002A F235 F17E F10C 0017E 0010C    19 NZERO1   PACK  NUM1(4),BUFFER(6) Store first number                                      
+ 000030 D205 F15C F114 0015C 00114    20          MVC   TEMP(6),BUFFER+8 Move second num into temp                                
+ 000036 D505 F15C F102 0015C 00102    21          CLC   TEMP(6),=C'0' See if second num is 0                                      
+ 00003C 4770 F050            00050    22          BNE   NZERO2         Continue if not zero                                       
+ 000040 D207 F186 F103 00186 00103    23          MVC   RESULT(8),=P'0' Result is 0                                               
+ 000046 F235 F182 F114 00182 00114    24          PACK  NUM2(4),BUFFER+8(6) Store second number                                   
+ 00004C 47F0 F0C4            000C4    25          B     PRINT          Print                                                      
+ 000050 F235 F182 F114 00182 00114    26 NZERO2   PACK  NUM2,BUFFER+8(6) Store second number                                      
+ 000056 F873 F162 F17E 00162 0017E    27          ZAP   VARC(8),NUM1(4)   Copy NUM1 into VARC                                     
+ 00005C FD73 F162 F182 00162 00182    28          DP    VARC(8),NUM2(4) Divide VARC by NUM2                                       
+ 000062 D203 F16A F166 0016A 00166    29          MVC   VARD(4),VARC+4  VARD = remainder                                          
+ 000068 F873 F186 F162 00186 00162    30          ZAP   RESULT(8),VARC(4)  Copy VARC into RESULT                                  
+ 00006E FC73 F186 F182 00186 00182    31          MP    RESULT(8),NUM2(4) RESULT = VARC * NUM2                                    
+ 000074 F873 F16E F16A 0016E 0016A    32          ZAP   AVARD(8),VARD(4)  Copy VARD into AVARD                                    
+ 00007A FC70 F16E F104 0016E 00104    33          MP    AVARD(8),=PL1'1' AVARD = abs. val. AVARD                                  
+ 000080 F873 F176 F182 00176 00182    34          ZAP   VARE(8),NUM2(4)   Copy NUM2 into VARE                                     
+ 000086 FC70 F176 F104 00176 00104    35          MP    VARE(8),=PL1'1' VARE = abs. val. VARE                                     
+ 00008C FC71 F16E F100 0016E 00100    36          MP    AVARD(8),=PL2'2' AVARD = 2 * AVARD                                        
+ 000092 F933 F172 F17A 00172 0017A    37 LOOP     CP    AVARD+4(4),VARE+4(4) See if AVARD >= AVARE                                
+ 000098 4770 F0BA            000BA    38          BNE   NA              If not equal                                              
+ 00009C 47D0 F0BA            000BA    39          BNH   NA              If AVARD is lower                                         
+ 0000A0 F930 F17E F105 0017E 00105    40          CP    NUM1(4),=PL1'0' See if NUM1 is 0                                          
+ 0000A6 47D0 F0B0            000B0    41          BNH   ELSE            If NUM1 is less than 0                                    
+ 0000AA FA70 F186 F104 00186 00104    42          AP    RESULT(8),=PL1'1' RESULT = RESULT + AVARE                                 
+ 0000B0 FB77 F186 F176 00186 00176    43 ELSE     SP    RESULT(8),VARE(8) RESULT = RESULT = AVARE                                 
+ 0000B6 47F0 F0C4            000C4    44          B     PRINT           Go to PRINT                                               
+ 0000BA D207 F186 F106 00186 00106    45 NA       MVC   RESULT(8),=X'0' If AVARD is less than AVARE                               
+ 0000C0 47F0 F0C4            000C4    46          B     PRINT           Go to PRINT                                               
+ 0000C4 D204 F18F F107 0018F 00107    47 PRINT    MVC   PNUM1(5),=X'4020202120' Format first number                               
+ 0000CA D204 F196 F107 00196 00107    48          MVC   PNUM2(5),=X'4020202120' Format second number                              
+ 0000D0 D204 F19D F107 0019D 00107    49          MVC   PRESULT(5),=X'4020202120' Format result                                   
+ 0000D6 DE04 F18F F17E 0018F 0017E    50          ED    PNUM1(5),NUM1   Put first number on line                                  
+ 0000DC DE04 F196 F182 00196 00182    51          ED    PNUM2(5),NUM2   Put second number on line                                 
+ 0000E2 DE04 F186 F186 00186 00186    52          ED    RESULT(5),RESULT Put result on line                                       
+1                                                                                                               PAGE    2         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+ 0000E8 E020 F18E 0014 0018E          53          XPRNT LINE,20         Print line                                                
+ 0000EE 47F0 F000            00000    54          B     READ            Repeat loop until EOF                                     
+ 0000F2 E160 0000 0000 00000          55 DONE     XDUMP                                                                           
+ 0000F8 07FE                          56          BR    14                                                                        
+                                      57          LTORG                                                                           
+ 000100 002C                          58                =PL2'2'                                                                   
+ 000102 F0                            59                =C'0'                                                                     
+ 000103 0C                            60                =P'0'                                                                     
+ 000104 1C                            61                =PL1'1'                                                                   
+ 000105 0C                            62                =PL1'0'                                                                   
+ 000106 00                            63                =X'0'                                                                     
+ 000107 4020202120                    64                =X'4020202120'                                                            
+ 00010C                               65 BUFFER   DS    80C                                                                       
+ 00015C                               66 TEMP     DS    ZL6                                                                       
+ 000162                               67 VARC     DS    PL8                                                                       
+ 00016A                               68 VARD     DS    PL4                                                                       
+ 00016E                               69 AVARD    DS    PL8                                                                       
+ 000176                               70 VARE     DS    PL8                                                                       
+ 00017E                               71 NUM1     DS    PL4                                                                       
+ 000182                               72 NUM2     DS    PL4                                                                       
+ 000186                               73 RESULT   DS    PL8                                                                       
+ 00018E F0                            74 LINE     DC    CL1'0'                                                                    
+ 00018F                               75 PNUM1    DS    5C                                                                        
+ 000194 4040                          76          DC    2C' '                                                                     
+ 000196                               77 PNUM2    DS    5C                                                                        
+ 00019B 4040                          78          DC    2C' '                                                                     
+ 00019D                               79 PRESULT  DS    5C                                                                        
+                                      80          END   MAIN                                                                      
+0***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                      
+0*** DYNAMIC CORE AREA USED:  LOW:    3656 HIGH:     876 LEAVING:  489036 FREE BYTES. AVERAGE:       55 BYTES/STMT ***            
+0*** ASSEMBLY TIME =    0.000 SECS,    81000 STATEMENTS/SEC ***                                                                   
+0*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                       
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+1    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    0      0                                                                                                                 
+0    2      0                                                                                                                 
+0    4      0                                                                                                                 
+0BEGIN XSNAP - CALL     1 AT D00000F8 USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    000001A8    FFFE7960    00000000                      
+0                                                                                                                                 
+0*** EXECUTION TIME =    0.000 SECS.       676 INSTRUCTIONS EXECUTED -   676000 INSTRUCTIONS/SEC ***                              
+0*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                
